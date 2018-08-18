@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Services\" />
+    <Folder Include="Models\BindingModels\" />
+    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
 
 </Project>
