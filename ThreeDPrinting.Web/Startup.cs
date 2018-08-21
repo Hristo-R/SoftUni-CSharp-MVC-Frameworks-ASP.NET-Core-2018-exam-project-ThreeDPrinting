@@ -33,7 +33,8 @@
 
             services.AddDbContext<ThreeDPrintingDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection"),
+                    dbOptions => dbOptions.MigrationsAssembly("ThreeDPrinting.Data")));
             services.AddDefaultIdentity<User>()
                 .AddEntityFrameworkStores<ThreeDPrintingDbContext>();
 

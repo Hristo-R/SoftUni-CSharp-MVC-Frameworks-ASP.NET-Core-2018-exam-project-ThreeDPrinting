@@ -20,8 +20,7 @@
         public decimal Price { get; set; }
 
         [Required]
-        [MinLength(10)]
-        [MaxLength(2000)]
+        [Url]
         public string ImageUrl { get; set; }
 
         public string UserId { get; set; }

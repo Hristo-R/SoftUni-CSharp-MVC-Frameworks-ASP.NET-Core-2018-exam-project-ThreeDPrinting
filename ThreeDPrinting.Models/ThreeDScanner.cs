@@ -3,7 +3,7 @@
     using System.ComponentModel.DataAnnotations;
     using ThreeDPrinting.Web.Models;
 
-    public class ThreeDPrinter
+    public class ThreeDScanner
     {
         public int Id { get; set; }
 
@@ -21,7 +21,11 @@
 
         [Required]
         [MaxLength(50)]
-        public string BuildVolume { get; set; }
+        public string WorkingRange { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string DepthImageSize { get; set; }
 
         [Required]
         [MaxLength(6000)]
