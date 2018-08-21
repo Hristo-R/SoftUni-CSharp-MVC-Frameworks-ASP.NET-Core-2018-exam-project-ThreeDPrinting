@@ -4,9 +4,9 @@
     using Microsoft.EntityFrameworkCore;
     using ThreeDPrinting.Web.Models;
 
-    public class ApplicationDbContext : IdentityDbContext<User>
+    public class ThreeDPrintingDbContext : IdentityDbContext<User>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public ThreeDPrintingDbContext(DbContextOptions<ThreeDPrintingDbContext> options)
             : base(options)
         {
         }

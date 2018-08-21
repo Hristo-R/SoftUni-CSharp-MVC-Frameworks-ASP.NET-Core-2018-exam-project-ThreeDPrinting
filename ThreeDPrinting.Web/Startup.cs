@@ -6,11 +6,11 @@
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
-    using ThreeDPrinting.Web.Data;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using System;
     using ThreeDPrinting.Web.Models;
+    using ThreeDPrinting.Web.Data;
 
     public class Startup
     {
@@ -31,11 +31,11 @@
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ThreeDPrintingDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<User>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<ThreeDPrintingDbContext>();
 
             services.Configure<IdentityOptions>(options =>
             {
