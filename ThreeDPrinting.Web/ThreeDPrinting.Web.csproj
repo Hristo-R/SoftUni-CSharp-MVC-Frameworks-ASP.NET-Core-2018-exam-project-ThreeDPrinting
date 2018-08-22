@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Identity\Services\" />
     <Folder Include="Models\BindingModels\" />
     <Folder Include="Models\ViewModels\" />
@@ -19,6 +20,15 @@
   <ItemGroup>
     <ProjectReference Include="..\ThreeDPrinting.Data\ThreeDPrinting.Data.csproj" />
     <ProjectReference Include="..\ThreeDPrinting.Models\ThreeDPrinting.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Admin\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Admin\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
   </ItemGroup>
 
 </Project>
