@@ -17,7 +17,8 @@
 
         public ExternalLoginsModel(
             UserManager<User> userManager,
-            SignInManager<User> signInManager)
+            SignInManager<User> signInManager,
+            RoleManager<IdentityRole> roleManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
@@ -35,6 +36,8 @@
         public async Task<IActionResult> OnGetAsync()
         {
             var user = await userManager.GetUserAsync(User);
+            var isAdmin = await userManager.IsInRoleAsync(user, "Administrator");
+
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{userManager.GetUserId(User)}'.");

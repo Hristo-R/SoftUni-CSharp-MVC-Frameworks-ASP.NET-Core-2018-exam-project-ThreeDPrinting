@@ -8,6 +8,7 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using ThreeDPrinting.Web.Common;
     using ThreeDPrinting.Web.Data;
     using ThreeDPrinting.Web.Models;
 
@@ -35,6 +36,7 @@
                     Configuration.GetConnectionString("DefaultConnection"),
                     dbOptions => dbOptions.MigrationsAssembly("ThreeDPrinting.Data")));
             services.AddDefaultIdentity<User>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ThreeDPrintingDbContext>();
 
             services.Configure<IdentityOptions>(options =>
@@ -59,7 +61,11 @@
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(
+            IApplicationBuilder app, 
+            IHostingEnvironment env,
+            UserManager<User> userManager,
+            RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -75,8 +81,9 @@
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
             app.UseAuthentication();
+
+            app.SeedDatabase();
 
             app.UseMvc(routes =>
             {
