@@ -1,9 +1,9 @@
 ﻿namespace ThreeDPrinting.Web.Areas.Identity.Pages
 {
     using System.Diagnostics;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
-    using Microsoft.AspNetCore.Authorization;
 
     [AllowAnonymous]
     public class ErrorModel : PageModel

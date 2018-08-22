@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 
 [assembly: HostingStartup(typeof(ThreeDPrinting.Web.Areas.Identity.IdentityHostingStartup))]
+
 namespace ThreeDPrinting.Web.Areas.Identity
 {
     public class IdentityHostingStartup : IHostingStartup
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) => {
+            builder.ConfigureServices((context, services) =>
+            {
             });
         }
     }

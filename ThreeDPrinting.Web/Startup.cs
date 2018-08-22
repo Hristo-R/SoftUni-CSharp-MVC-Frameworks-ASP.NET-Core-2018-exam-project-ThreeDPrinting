@@ -1,16 +1,15 @@
 ﻿namespace ThreeDPrinting.Web
 {
     using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using System;
-    using ThreeDPrinting.Web.Models;
     using ThreeDPrinting.Web.Data;
+    using ThreeDPrinting.Web.Models;
 
     public class Startup
     {
@@ -50,8 +49,10 @@
                     RequireNonAlphanumeric = false
                 };
 
-                options.Lockout.MaxFailedAccessAttempts = 3;
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                // options.SignIn.RequireConfirmedEmail = true;
+
+                // options.Lockout.MaxFailedAccessAttempts = 3;
+                // options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace ThreeDPrinting.Web.Data.Migrations
+﻿namespace ThreeDPrinting.Web.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Metadata;
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddedThreeDEntitiesTables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

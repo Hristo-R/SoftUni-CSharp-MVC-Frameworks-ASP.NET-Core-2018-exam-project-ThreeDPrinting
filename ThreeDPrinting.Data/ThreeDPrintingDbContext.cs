@@ -38,7 +38,6 @@
                 .WithOne(tdf => tdf.User)
                 .HasForeignKey(tdf => tdf.UserId);
 
-
             base.OnModelCreating(builder);
         }
     }
