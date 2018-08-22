@@ -36,7 +36,7 @@
         public async Task<IActionResult> OnGetAsync()
         {
             var user = await userManager.GetUserAsync(User);
-            var isAdmin = await userManager.IsInRoleAsync(user, "Administrator");
+            // var isAdmin = await userManager.IsInRoleAsync(user, "Administrator");
 
             if (user == null)
             {
