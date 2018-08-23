@@ -1,21 +1,26 @@
 ﻿namespace ThreeDPrinting.Web.Areas.Admin.Controllers
 {
+    using System.Collections.Generic;
     using System.Linq;
+    using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
+    using ThreeDPrinting.Web.Areas.Admin.Models.ViewModels;
     using ThreeDPrinting.Web.Data;
 
     public class UsersController : AdminController
     {
-        private ThreeDPrintingDbContext context;
+        private readonly ThreeDPrintingDbContext context;
+        private readonly IMapper mapper;
 
-        public UsersController(ThreeDPrintingDbContext context)
+        public UsersController(ThreeDPrintingDbContext context, IMapper mapper)
         {
             this.context = context;
+            this.mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            var users = this.context.Users.ToList();
+            var users = this.mapper.Map<IEnumerable<UserConciseViewModel>>(this.context.Users.ToList());
             return View(users);
         }
     }

@@ -1,5 +1,6 @@
 ﻿namespace ThreeDPrinting.Web
 {
+    using AutoMapper;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -8,9 +9,9 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using ThreeDPrinting.Models;
     using ThreeDPrinting.Web.Common;
     using ThreeDPrinting.Web.Data;
-    using ThreeDPrinting.Models;
 
     public class Startup
     {
@@ -58,6 +59,8 @@
                 // options.Lockout.MaxFailedAccessAttempts = 3;
                 // options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
             });
+
+            services.AddAutoMapper();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
