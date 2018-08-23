@@ -10,7 +10,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using ThreeDPrinting.Web.Common;
     using ThreeDPrinting.Web.Data;
-    using ThreeDPrinting.Web.Models;
+    using ThreeDPrinting.Models;
 
     public class Startup
     {

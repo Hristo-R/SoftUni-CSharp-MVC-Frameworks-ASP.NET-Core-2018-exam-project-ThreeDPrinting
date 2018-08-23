@@ -1,11 +1,8 @@
 ﻿namespace ThreeDPrinting.Web.Areas.Admin.Controllers
 {
-    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
-    [Area("Admin")]
-    [Authorize(Roles = "Administrator")]
-    public class HomeController : Controller
+    public class HomeController : AdminController
     {
         public IActionResult Index()
         {

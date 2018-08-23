@@ -3,7 +3,7 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
-    using ThreeDPrinting.Web.Models;
+    using ThreeDPrinting.Models;
 
     public static class ApplicationBuilderAuthExtentions
     {

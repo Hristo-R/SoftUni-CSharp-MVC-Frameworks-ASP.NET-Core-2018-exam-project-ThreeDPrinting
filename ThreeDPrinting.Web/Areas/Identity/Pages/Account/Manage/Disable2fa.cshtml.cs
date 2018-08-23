@@ -6,7 +6,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
-    using ThreeDPrinting.Web.Models;
+    using ThreeDPrinting.Models;
 
     public class Disable2faModel : PageModel
     {

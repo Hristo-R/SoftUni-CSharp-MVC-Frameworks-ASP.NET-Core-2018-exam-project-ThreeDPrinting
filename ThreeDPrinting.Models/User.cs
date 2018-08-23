@@ -1,8 +1,7 @@
-﻿namespace ThreeDPrinting.Web.Models
+﻿namespace ThreeDPrinting.Models
 {
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Identity;
-    using ThreeDPrinting.Models;
 
     public class User : IdentityUser
     {

@@ -10,7 +10,7 @@
     using Microsoft.AspNetCore.Mvc.RazorPages;
     using Microsoft.Extensions.Logging;
     using Newtonsoft.Json;
-    using ThreeDPrinting.Web.Models;
+    using ThreeDPrinting.Models;
 
     public class DownloadPersonalDataModel : PageModel
     {

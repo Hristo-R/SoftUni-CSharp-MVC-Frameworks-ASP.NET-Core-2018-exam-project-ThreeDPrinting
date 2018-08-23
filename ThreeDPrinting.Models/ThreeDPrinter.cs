@@ -1,7 +1,6 @@
 ﻿namespace ThreeDPrinting.Models
 {
     using System.ComponentModel.DataAnnotations;
-    using ThreeDPrinting.Web.Models;
 
     public class ThreeDPrinter
     {

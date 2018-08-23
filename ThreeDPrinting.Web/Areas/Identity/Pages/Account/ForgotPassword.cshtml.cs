@@ -8,7 +8,7 @@
     using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.RazorPages;
-    using ThreeDPrinting.Web.Models;
+    using ThreeDPrinting.Models;
 
     [AllowAnonymous]
     public class ForgotPasswordModel : PageModel

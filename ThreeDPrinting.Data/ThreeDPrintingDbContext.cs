@@ -3,7 +3,6 @@
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using ThreeDPrinting.Models;
-    using ThreeDPrinting.Web.Models;
 
     public class ThreeDPrintingDbContext : IdentityDbContext<User>
     {
