@@ -9,6 +9,7 @@
         public AutoMapperProfile()
         {
             this.CreateMap<User, UserConciseViewModel>();
+            this.CreateMap<User, UserDetailsViewModel>();
         }
     }
 }
