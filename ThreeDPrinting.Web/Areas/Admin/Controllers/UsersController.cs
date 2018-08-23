@@ -23,5 +23,12 @@
             var users = this.mapper.Map<IEnumerable<UserConciseViewModel>>(this.context.Users.ToList());
             return View(users);
         }
+
+        public IActionResult Details(string id)
+        {
+            var user = this.context.Users.Find(id);
+            var model = this.mapper.Map<UserConciseViewModel>(user);
+            return View(model);
+        }
     }
 }
