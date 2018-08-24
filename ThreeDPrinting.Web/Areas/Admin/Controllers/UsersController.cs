@@ -26,15 +26,24 @@
             this.userManager = userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var users = this.context.Users.ToList();
+            var currentUser = await this.userManager.GetUserAsync(this.User);
+            var users = this.context.Users
+                .Where(u => u.Id != currentUser.Id)
+                .ToList();
             var model = this.mapper.Map<IEnumerable<UserConciseViewModel>>(users);
             return View(model);
         }
 
         public async Task<IActionResult> Details(string id)
         {
+            var currentUser = await this.userManager.GetUserAsync(this.User);
+            if (id == currentUser.Id)
+            {
+                return Unauthorized();
+            }
+
             var user = await this.context.Users.FindAsync(id);
             if (user == null)
             {

@@ -88,7 +88,10 @@
             app.UseCookiePolicy();
             app.UseAuthentication();
 
-            app.SeedDatabase();
+            if (env.IsDevelopment())
+            {
+                app.SeedDatabase();
+            }
 
             app.UseMvc(routes =>
             {
