@@ -10,5 +10,7 @@
         public List<ThreeDScanner> ThreeDScanners { get; set; } = new List<ThreeDScanner>();
 
         public List<ThreeDFilament> ThreeDFilaments { get; set; } = new List<ThreeDFilament>();
+
+        public List<ThreeDPen> ThreeDPens { get; set; } = new List<ThreeDPen>();
     }
 }

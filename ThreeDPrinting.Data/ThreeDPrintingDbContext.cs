@@ -17,6 +17,8 @@
 
         public DbSet<ThreeDFilament> ThreeDFilaments { get; set; }
 
+        public DbSet<ThreeDPen> ThreeDPens { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder
@@ -36,6 +38,12 @@
                 .HasMany(u => u.ThreeDFilaments)
                 .WithOne(tdf => tdf.User)
                 .HasForeignKey(tdf => tdf.UserId);
+
+            builder
+                .Entity<User>()
+                .HasMany(u => u.ThreeDPens)
+                .WithOne(tdp => tdp.User)
+                .HasForeignKey(tdp => tdp.UserId);
 
             base.OnModelCreating(builder);
         }

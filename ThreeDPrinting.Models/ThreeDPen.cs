@@ -2,7 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class ThreeDScanner
+    public class ThreeDPen
     {
         public int Id { get; set; }
 
@@ -11,21 +11,10 @@
         public string Make { get; set; }
 
         [Required]
-        [MaxLength(100)]
-        public string Model { get; set; }
-
-        [Required]
         [Range(0, double.MaxValue)]
         public decimal Price { get; set; }
 
-        [Required]
-        [MaxLength(50)]
-        public string WorkingRange { get; set; }
-
-        [Required]
-        [MaxLength(50)]
-        public string DepthImageSize { get; set; }
-
+        [MaxLength(6000)]
         public string Description { get; set; }
 
         [Required]

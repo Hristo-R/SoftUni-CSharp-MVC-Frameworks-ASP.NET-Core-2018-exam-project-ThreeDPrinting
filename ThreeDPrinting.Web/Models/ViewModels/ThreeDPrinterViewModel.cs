@@ -12,6 +12,9 @@
         [StringLength(100)]
         public string Model { get; set; }
 
+        [Required]
+        [Range(0, double.MaxValue)]
+        [Display(Name = "Price in Euro")]
         public decimal Price { get; set; }
 
         [Required]

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ThreeDPenListingModel>
+@{
+    ViewData["Title"] = "All 3D Pens";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Picture
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pen in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@pen.ImageUrl" height=150>
+                </td>
+                <td>
+                    @pen.Make
+                </td>
+                <td>
+                    @pen.Description
+                </td>
+                <td>
+                    @pen.Price
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="/ThreeDPens/Edit3DPen/@pen.Id">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="/ThreeDPens/Delete3DPens/@pen.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
