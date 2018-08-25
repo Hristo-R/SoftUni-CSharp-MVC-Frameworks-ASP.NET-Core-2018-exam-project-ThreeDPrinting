@@ -33,8 +33,22 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="ThreeDPrinters" asp-action="All3DPrinters">3D Printers</a></li>
+                    <li><a asp-area="" asp-controller="ThreeDScanners" asp-action="All3DScanners">3D Scanners</a></li>
+                    <li><a asp-area="" asp-controller="ThreeDFilaments" asp-action="All3DFilaments">3D Printer Filaments</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Add product
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="ThreeDPrinters" asp-action="Add3DPrinter">3D Printer</a></li>
+                            <li><a asp-area="" asp-controller="ThreeDScanners" asp-action="Add3DScanner">3D Scanner</a></li>
+                            <li><a asp-area="" asp-controller="ThreeDFilaments" asp-action="Add3DFilament">3D Printer Filament</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <partial name="_LoginPartial" />
+                @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
     </nav>

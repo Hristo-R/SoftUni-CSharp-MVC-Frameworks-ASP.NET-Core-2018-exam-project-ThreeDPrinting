@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ThreeDScannerListingModel>
+@{
+    ViewData["Title"] = "All 3D Scanners";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Picture
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Depth Working Range
+            </th>
+            <th>
+                Depth Image Size
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var scanner in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@scanner.ImageUrl" height=150>
+                </td>
+                <td>
+                    @scanner.Make
+                </td>
+                <td>
+                    @scanner.Model
+                </td>
+                <td>
+                    @scanner.Price
+                </td>
+                <td>
+                    @scanner.WorkingRange
+                </td>
+                <td>
+                    @scanner.DepthImageSize
+                </td>
+                <td>
+                    @scanner.Description
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="/ThreeDScanners/Edit3DScanners/@scanner.Id">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="/ThreeDScanners/Delete3DScanners/@scanner.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

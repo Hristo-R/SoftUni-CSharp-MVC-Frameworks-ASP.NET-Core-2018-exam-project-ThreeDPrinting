@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ThreeDFilamentListingModel>
+@{
+    ViewData["Title"] = "All 3D Filaments";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                Picture
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var filament in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@filament.ImageUrl" height=150>
+                </td>
+                <td>
+                    @filament.Make
+                </td>
+                <td>
+                    @filament.Color
+                </td>
+                <td>
+                    @filament.Price
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="/ThreeDFilaments/Edit3DFilaments/@filament.Id">Edit</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-sm" href="/ThreeDFilaments/Delete3DFilaments/@filament.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

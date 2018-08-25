@@ -62,6 +62,8 @@
 
             services.AddAutoMapper();
 
+            services.AddDomainServices();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

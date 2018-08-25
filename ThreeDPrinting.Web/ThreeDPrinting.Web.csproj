@@ -7,13 +7,9 @@
 
   <ItemGroup>
     <Compile Remove="Models\BindingModels\**" />
-    <Compile Remove="Models\ViewModels\**" />
     <Content Remove="Models\BindingModels\**" />
-    <Content Remove="Models\ViewModels\**" />
     <EmbeddedResource Remove="Models\BindingModels\**" />
-    <EmbeddedResource Remove="Models\ViewModels\**" />
     <None Remove="Models\BindingModels\**" />
-    <None Remove="Models\ViewModels\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ThreeDPrinting.Data\ThreeDPrinting.Data.csproj" />
     <ProjectReference Include="..\ThreeDPrinting.Models\ThreeDPrinting.Models.csproj" />
+    <ProjectReference Include="..\ThreeDPrinting.Services\ThreeDPrinting.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
