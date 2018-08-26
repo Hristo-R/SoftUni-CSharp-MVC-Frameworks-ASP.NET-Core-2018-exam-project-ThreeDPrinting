@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using AutoMapper;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using ThreeDPrinting.Models;
@@ -17,7 +18,7 @@
         private readonly UserManager<User> userManager;
 
         public UsersController(
-            ThreeDPrintingDbContext context, 
+            ThreeDPrintingDbContext context,
             IMapper mapper,
             UserManager<User> userManager)
         {
@@ -32,8 +33,28 @@
             var users = this.context.Users
                 .Where(u => u.Id != currentUser.Id)
                 .ToList();
+            // var model = this.mapper.Map<IEnumerable<UserConciseViewModel>>(users);
+
             var model = this.mapper.Map<IEnumerable<UserConciseViewModel>>(users);
+
+            foreach (var user in users)
+            {
+                var roles = await this.userManager.GetRolesAsync(user);
+                if (roles.Contains("Dealer"))
+                {
+                    model             .Where(u => u.Id == user.Id)
+                    .Select(ucvm => new UserConciseViewModel
+                    {
+                        Id = ucvm.Id,
+                        Email = ucvm.Email,
+                        Username = ucvm.Username,
+                        IsDealer = true
+                    });
+                }
+            }
+
             return View(model);
+            //return View(model);
         }
 
         public async Task<IActionResult> Details(string id)
@@ -49,10 +70,29 @@
             {
                 return NotFound();
             }
+
             var roles = await this.userManager.GetRolesAsync(user);
             var model = this.mapper.Map<UserDetailsViewModel>(user);
             model.Roles = roles;
             return View(model);
+        }
+
+        [Area("Admin")]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> MakeDealer(string id)
+        {
+            var user = await this.context.Users.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var result = await userManager.AddToRoleAsync(user, "Dealer");
+            var model = this.mapper.Map<UserDetailsViewModel>(user);
+
+            var currentUser = await this.userManager.GetUserAsync(this.User);
+            var currentUserId = currentUser.Id;
+            return RedirectToAction("Index");
         }
     }
 }

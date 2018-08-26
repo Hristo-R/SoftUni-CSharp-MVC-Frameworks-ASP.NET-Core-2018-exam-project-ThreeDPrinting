@@ -2,18 +2,26 @@
 <tr>
     <td>@Model.Username</td>
     <td>@Model.Email</td>
-    <td>@Html.DisplayFor(model => model.IsDealer)</td>
+    <td>
+        @if (Model.Role == "Dealer")
+        {
+            <p>
+                Dealer               
+            </p>
+        }
+        -
+        </td>
     <td>
         <a asp-area="Admin" asp-controller="Users" asp-action="Details" asp-route-id="@Model.Id"
-            class="btn btn-default">
+           class="btn btn-default">
             Details
         </a>
         <a asp-area="Admin" asp-controller="Users" asp-action="MakeDealer" asp-route-id="@Model.Id"
-            class="btn btn-primary">
+           class="btn btn-primary">
             Make Dealer
         </a>
         <a asp-area="Admin" asp-controller="Users" asp-action="BanUser" asp-route-id="@Model.Id"
-            class="btn btn-danger">
+           class="btn btn-danger">
             Ban User
         </a>
     </td>
