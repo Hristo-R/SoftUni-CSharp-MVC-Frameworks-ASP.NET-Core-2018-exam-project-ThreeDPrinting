@@ -29,45 +29,51 @@
             <th>
                 Description
             </th>
-            <th>
-                Edit
-            </th>
-            <th>
-                Delete
-            </th>
-        </tr>
+            @if (User.IsInRole("Administrator") || User.IsInRole("Dealer"))
+            {
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+            }
+            </tr>
     </thead>
     <tbody>
         @foreach (var scanner in Model)
         {
-            <tr>
-                <td>
-                    <img src="@scanner.ImageUrl" height=150>
-                </td>
-                <td>
-                    @scanner.Make
-                </td>
-                <td>
-                    @scanner.Model
-                </td>
-                <td>
-                    @scanner.Price
-                </td>
-                <td>
-                    @scanner.WorkingRange
-                </td>
-                <td>
-                    @scanner.DepthImageSize
-                </td>
-                <td>
-                    @scanner.Description
-                </td>
+        <tr>
+            <td>
+                <img src="@scanner.ImageUrl" height=150>
+            </td>
+            <td>
+                @scanner.Make
+            </td>
+            <td>
+                @scanner.Model
+            </td>
+            <td>
+                @scanner.Price
+            </td>
+            <td>
+                @scanner.WorkingRange
+            </td>
+            <td>
+                @scanner.DepthImageSize
+            </td>
+            <td>
+                @scanner.Description
+            </td>
+            @if (User.IsInRole("Administrator") || User.IsInRole("Dealer"))
+            {
                 <td>
                     <a class="btn btn-warning btn-sm" href="/ThreeDScanners/Edit3DScanners/@scanner.Id">Edit</a>
                 </td>
                 <td>
                     <a class="btn btn-danger btn-sm" href="/ThreeDScanners/Delete3DScanners/@scanner.Id">Delete</a>
                 </td>
+            }
             </tr>
         }
     </tbody>

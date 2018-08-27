@@ -20,36 +20,42 @@
             <th>
                 Price
             </th>
-            <th>
-                Edit
-            </th>
-            <th>
-                Delete
-            </th>
-        </tr>
+            @if (User.IsInRole("Administrator") || User.IsInRole("Dealer"))
+            {
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+            }
+            </tr>
     </thead>
     <tbody>
         @foreach (var pen in Model)
         {
-            <tr>
-                <td>
-                    <img src="@pen.ImageUrl" height=150>
-                </td>
-                <td>
-                    @pen.Make
-                </td>
-                <td>
-                    @pen.Description
-                </td>
-                <td>
-                    @pen.Price
-                </td>
+        <tr>
+            <td>
+                <img src="@pen.ImageUrl" height=150>
+            </td>
+            <td>
+                @pen.Make
+            </td>
+            <td>
+                @pen.Description
+            </td>
+            <td>
+                @pen.Price
+            </td>
+            @if (User.IsInRole("Administrator") || User.IsInRole("Dealer"))
+            {
                 <td>
                     <a class="btn btn-warning btn-sm" href="/ThreeDPens/Edit3DPen/@pen.Id">Edit</a>
                 </td>
                 <td>
                     <a class="btn btn-danger btn-sm" href="/ThreeDPens/Delete3DPens/@pen.Id">Delete</a>
                 </td>
+            }
             </tr>
         }
     </tbody>

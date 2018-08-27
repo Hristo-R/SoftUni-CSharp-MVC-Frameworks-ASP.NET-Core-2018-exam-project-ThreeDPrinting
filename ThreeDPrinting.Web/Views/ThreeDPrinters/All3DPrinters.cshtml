@@ -18,51 +18,57 @@
                 Model
             </th>
             <th>
-                Price
-            </th>
-            <th>
                 Build Volume
             </th>
             <th>
                 Description
             </th>
             <th>
-                Edit
+                Price
             </th>
-            <th>
-                Delete
-            </th>
+            @if (User.IsInRole("Administrator") || User.IsInRole("Dealer"))
+            {
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+            }
         </tr>
     </thead>
     <tbody>
         @foreach (var printer in Model)
         {
-            <tr>
-                <td>
-                    <img src="@printer.ImageUrl" height=150>
-                </td>
-                <td>
-                    @printer.Make
-                </td>
-                <td>
-                    @printer.Model
-                </td>
-                <td>
-                    @printer.Price
-                </td>
-                <td>
-                    @printer.BuildVolume
-                </td>
-                <td>
-                    @printer.Description
-                </td>
+        <tr>
+            <td>
+                <img src="@printer.ImageUrl" height=150>
+            </td>
+            <td>
+                @printer.Make
+            </td>
+            <td>
+                @printer.Model
+            </td>
+            <td>
+                @printer.BuildVolume
+            </td>
+            <td>
+                @printer.Description
+            </td>
+            <td>
+                @printer.Price
+            </td>
+            @if (User.IsInRole("Administrator") || User.IsInRole("Dealer"))
+            {
                 <td>
                     <a class="btn btn-warning btn-sm" href="/ThreeDPrinters/Edit3DPrinters/@printer.Id">Edit</a>
                 </td>
                 <td>
                     <a class="btn btn-danger btn-sm" href="/ThreeDPrinters/Delete3DPrinters/@printer.Id">Delete</a>
                 </td>
-            </tr>
+            }
+        </tr>
         }
     </tbody>
 </table>
