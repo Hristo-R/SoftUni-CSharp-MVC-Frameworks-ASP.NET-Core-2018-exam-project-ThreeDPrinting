@@ -20,10 +20,10 @@
             this.threeDPens = threeDPens;
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Add3DPen() => this.View();
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         public IActionResult Add3DPen(ThreeDPenViewModel threeDPenModel)
         {
@@ -47,7 +47,7 @@
             return View(this.threeDPens.All3DPens());
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [Route("ThreeDPens/Edit3DPen/{id}")]
         public IActionResult Edit3DPen(int id)
         {
@@ -73,8 +73,8 @@
                 ImageUrl = threeDPen.ImageUrl
             });
         }
-       
-        [Authorize]
+
+        [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         [Route("ThreeDPens/Edit3DPen/{id}")]
         public IActionResult Edit3DPen(int id, ThreeDPenViewModel threeDPenModel)
@@ -101,10 +101,10 @@
             return RedirectToAction("All3DPens");
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Delete3DPens(int id) => View(id);
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Delete3DPen(int id)
         {
             this.threeDPens.Delete3DPens(id);

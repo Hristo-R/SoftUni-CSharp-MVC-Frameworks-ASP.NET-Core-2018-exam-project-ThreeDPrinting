@@ -20,10 +20,10 @@
             this.threeDFilaments = threeDFilaments;
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Add3DFilament() => this.View();
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         public IActionResult Add3DFilament(ThreeDFilamentViewModel threeDFilamentModel)
         {
@@ -47,7 +47,7 @@
             return View(this.threeDFilaments.All3DFilaments());
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [Route("ThreeDFilaments/Edit3DFilaments/{id}")]
         public IActionResult Edit3DFilaments(int id)
         {
@@ -67,7 +67,7 @@
             });
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         [Route("ThreeDFilaments/Edit3DFilaments/{id}")]
         public IActionResult Edit3DFilaments(int id, ThreeDFilamentViewModel threeDFilamentModel)
@@ -94,10 +94,10 @@
             return RedirectToAction("All3DFilaments");
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Delete3DFilaments(int id) => View(id);
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Delete3DFilament(int id)
         {
             this.threeDFilaments.Delete3DFilaments(id);

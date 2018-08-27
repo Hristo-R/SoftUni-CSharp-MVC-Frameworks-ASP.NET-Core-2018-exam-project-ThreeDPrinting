@@ -20,10 +20,10 @@
             this.threeDPrinters = threeDPrinters;
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Add3DPrinter() => this.View();
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         public IActionResult Add3DPrinter(ThreeDPrinterViewModel threeDPrinterModel)
         {
@@ -49,7 +49,7 @@
             return View(this.threeDPrinters.All3DPrinters());
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [Route("ThreeDPrinters/Edit3DPrinters/{id}")]
         public IActionResult Edit3DPrinters(int id)
         {
@@ -71,7 +71,7 @@
             });
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         [Route("ThreeDPrinters/Edit3DPrinters/{id}")]
         public IActionResult Edit3DPrinters(int id, ThreeDPrinterViewModel threeDPrinterModel)
@@ -100,10 +100,10 @@
             return RedirectToAction("All3DPrinters");
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Delete3DPrinters(int id) => View(id);
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Delete3DPrinter(int id)
         {
             this.threeDPrinters.Delete3DPrinters(id);

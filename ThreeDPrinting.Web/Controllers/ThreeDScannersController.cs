@@ -20,10 +20,10 @@
             this.threeDScanners = threeDScanners;
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Add3DScanner() => this.View();
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         public IActionResult Add3DScanner(ThreeDScannerViewModel threeDScannerModel)
         {
@@ -50,7 +50,7 @@
             return View(this.threeDScanners.All3DScanners());
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [Route("ThreeDScanners/Edit3DScanners/{id}")]
         public IActionResult Edit3DScanners(int id)
         {
@@ -73,7 +73,7 @@
             });
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         [Route("ThreeDScanners/Edit3DScanners/{id}")]
         public IActionResult Edit3DScanners(int id, ThreeDScannerViewModel threeDScannerModel)
@@ -103,10 +103,10 @@
             return RedirectToAction("All3DScanners");
         }
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Delete3DScanners(int id) => View(id);
 
-        [Authorize]
+        [Authorize(Roles = "Administrator, Dealer")]
         public IActionResult Delete3DScanner(int id)
         {
             this.threeDScanners.Delete3DScanners(id);
