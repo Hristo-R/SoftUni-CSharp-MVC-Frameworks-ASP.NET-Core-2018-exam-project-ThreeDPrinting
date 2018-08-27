@@ -2,15 +2,7 @@
 <tr>
     <td>@Model.Username</td>
     <td>@Model.Email</td>
-    <td>
-        @if (Model.Role == "Dealer")
-        {
-            <p>
-                Dealer               
-            </p>
-        }
-        -
-        </td>
+    <td>@Html.DisplayFor(model => model.IsDealer)</td> 
     <td>
         <a asp-area="Admin" asp-controller="Users" asp-action="Details" asp-route-id="@Model.Id"
            class="btn btn-default">
@@ -20,9 +12,9 @@
            class="btn btn-primary">
             Make Dealer
         </a>
-        <a asp-area="Admin" asp-controller="Users" asp-action="BanUser" asp-route-id="@Model.Id"
+        <a asp-area="Admin" asp-controller="Users" asp-action="BanDealer" asp-route-id="@Model.Id"
            class="btn btn-danger">
-            Ban User
+            Ban Dealer
         </a>
     </td>
 <tr>

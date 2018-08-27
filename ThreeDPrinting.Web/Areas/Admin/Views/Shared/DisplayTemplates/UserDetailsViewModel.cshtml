@@ -2,14 +2,14 @@
 <p><strong>Username:</strong> @Model.Username</p>
 <p><strong>Email:</strong> @Model.Email</p>
 <p>
-    <strong>Roles:</strong>
-    <ul>
+    <strong>Role:</strong>
+    
         @if (Model.Roles.Any())
         {
             @foreach (string role in Model.Roles)
             {
-                <li>@role</li>
+                @role
             }
         }
-    </ul>
+
 </p>
