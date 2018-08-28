@@ -58,7 +58,8 @@
                 models.Add(model);
             }
 
-            return View(models);
+            var sortedModels = models.OrderBy(m => m.Username);
+            return View(sortedModels);
         }
 
         public async Task<IActionResult> Details(string id)
