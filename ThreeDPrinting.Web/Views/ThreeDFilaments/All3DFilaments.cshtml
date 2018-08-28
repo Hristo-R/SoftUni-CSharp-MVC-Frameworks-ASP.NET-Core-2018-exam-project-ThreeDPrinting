@@ -28,9 +28,6 @@
                 <th>
                     Delete
                 </th>
-                <th>
-                    Author
-                </th>
             }
             </tr>
     </thead>
@@ -50,16 +47,13 @@
             <td>
                 @filament.Price
             </td>
-            @if (User.IsInRole("Administrator") || (User.IsInRole("Dealer") && User.Identity.Name == @filament.Username.UserName))         
+            @if (User.IsInRole("Administrator") || (User.IsInRole("Dealer")))      
             {
             <td>
                 <a class="btn btn-warning btn-sm" href="/ThreeDFilaments/Edit3DFilaments/@filament.Id">Edit</a>
             </td>
             <td>
                 <a class="btn btn-danger btn-sm" href="/ThreeDFilaments/Delete3DFilaments/@filament.Id">Delete</a>
-            </td>.
-            <td>
-                @filament.Username
             </td>
             }
         </tr>
