@@ -45,7 +45,8 @@
                     Make = tdf.Make,
                     Color = tdf.Color,
                     Price = tdf.Price,
-                    ImageUrl = tdf.ImageUrl
+                    ImageUrl = tdf.ImageUrl,
+                    Username = tdf.User
                 })
                 .ToList();
         }

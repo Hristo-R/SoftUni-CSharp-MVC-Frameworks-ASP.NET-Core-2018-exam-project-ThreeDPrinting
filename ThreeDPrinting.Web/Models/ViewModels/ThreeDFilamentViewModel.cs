@@ -1,6 +1,7 @@
 ﻿namespace ThreeDPrinting.Web.Models.ViewModels
 {
     using System.ComponentModel.DataAnnotations;
+    using ThreeDPrinting.Models;
 
     public class ThreeDFilamentViewModel
     {
@@ -20,5 +21,7 @@
         [Display(Name = "Image URL")]
         [Url]
         public string ImageUrl { get; set; }
+
+        public User User { get; set; }
     }
 }
