@@ -25,7 +25,7 @@
 
             var service = new ThreeDPrinterService(this.dbContext);
 
-            /// Act 
+            // Act 
             var printers = service.All3DPrinters();
 
             // Assert

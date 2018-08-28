@@ -24,7 +24,7 @@
 
             var service = new ThreeDPenService(this.dbContext);
 
-            /// Act 
+            // Act 
             var pen = service.All3DPens();
 
             // Assert

@@ -43,7 +43,7 @@
 
             var service = new ThreeDScannerService(this.dbContext);
 
-            /// Act 
+            // Act 
             var scanners = service.All3DScanners();
 
             // Assert
