@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreeDPrinting.Models", "Th
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreeDPrinting.Data", "ThreeDPrinting.Data\ThreeDPrinting.Data.csproj", "{A812F7A1-5E08-4943-9F87-A38FE71C8F9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeDPrinting.Services", "ThreeDPrinting.Services\ThreeDPrinting.Services.csproj", "{DBA45DF8-EA4F-4895-A581-F6036E0D9420}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreeDPrinting.Services", "ThreeDPrinting.Services\ThreeDPrinting.Services.csproj", "{DBA45DF8-EA4F-4895-A581-F6036E0D9420}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeDPrinting.Tests", "ThreeDPrinting.Tests\ThreeDPrinting.Tests.csproj", "{852B5B81-D42F-46E4-A83C-8D6967B90AFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DBA45DF8-EA4F-4895-A581-F6036E0D9420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBA45DF8-EA4F-4895-A581-F6036E0D9420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBA45DF8-EA4F-4895-A581-F6036E0D9420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852B5B81-D42F-46E4-A83C-8D6967B90AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852B5B81-D42F-46E4-A83C-8D6967B90AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852B5B81-D42F-46E4-A83C-8D6967B90AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852B5B81-D42F-46E4-A83C-8D6967B90AFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
