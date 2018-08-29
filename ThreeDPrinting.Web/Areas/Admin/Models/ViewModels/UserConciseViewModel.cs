@@ -1,7 +1,5 @@
 ﻿namespace ThreeDPrinting.Web.Areas.Admin.Models.ViewModels
 {
-    using System.Collections.Generic;
-
     public class UserConciseViewModel
     {
         public string Id { get; set; }
