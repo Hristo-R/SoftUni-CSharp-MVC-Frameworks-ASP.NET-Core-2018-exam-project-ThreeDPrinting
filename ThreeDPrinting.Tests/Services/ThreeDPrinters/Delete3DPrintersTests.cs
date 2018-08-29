@@ -1,4 +1,4 @@
-﻿namespace ThreeDPrinting.Tests.Services.ThreeDFilaments
+﻿namespace ThreeDPrinting.Tests.Services.ThreeDPrinters
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ThreeDPrinting.Models;
@@ -7,21 +7,22 @@
     using ThreeDPrinting.Web.Data;
 
     [TestClass]
-    public class Delete3DFilamentsTests
+    public class Delete3DPrintersTests
     {
+
         private ThreeDPrintingDbContext dbContext;
 
         [TestMethod]
 
-        public void Delete3DFilament_ShouldReturnOK()
+        public void Delete3DPrinter_ShouldReturnOK()
         {
             // Arrange
-            this.dbContext.ThreeDFilaments.Add(new ThreeDFilament() { Id = 1 });
+            this.dbContext.ThreeDPrinters.Add(new ThreeDPrinter() { Id = 1 });
             this.dbContext.SaveChanges();
-            var service = new ThreeDFilamentService(this.dbContext);
+            var service = new ThreeDPrinterService(this.dbContext);
 
             // Act 
-            service.Delete3DFilaments(1);
+            service.Delete3DPrinters(1);
             bool isDeleted = IsDeleted();
 
             // Assert
@@ -30,11 +31,11 @@
 
         private bool IsDeleted()
         {
-            var filaments = this.dbContext.ThreeDFilaments;
+            var printers = this.dbContext.ThreeDPrinters;
             bool isDeleted = true;
-            foreach (var filament in filaments)
+            foreach (var printer in printers)
             {
-                if (filament.Id == 1)
+                if (printer.Id == 1)
                 {
                     isDeleted = false;
                 }
