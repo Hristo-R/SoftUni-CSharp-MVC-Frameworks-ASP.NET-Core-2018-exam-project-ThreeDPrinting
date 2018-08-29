@@ -1,4 +1,4 @@
-﻿namespace ThreeDPrinting.Tests.Controllers.HomeControllerTests
+﻿namespace ThreeDPrinting.Tests.Controllers.HomeController
 {
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.VisualStudio.TestTools.UnitTesting;

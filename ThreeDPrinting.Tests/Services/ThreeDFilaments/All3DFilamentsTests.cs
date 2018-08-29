@@ -24,7 +24,7 @@
 
             var service = new ThreeDFilamentService(this.dbContext);
 
-            /// Act 
+            // Act 
             var filaments = service.All3DFilaments();
 
             // Assert
