@@ -22,7 +22,7 @@
 
             // Act 
             service.Delete3DFilaments(1);
-            bool isDeleted = IsDeleted();
+            bool isDeleted = this.IsDeleted();
 
             // Assert
             Assert.AreEqual(true, isDeleted);

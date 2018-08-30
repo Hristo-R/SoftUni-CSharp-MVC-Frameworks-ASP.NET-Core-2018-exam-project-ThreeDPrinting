@@ -3,13 +3,7 @@
     using AutoMapper;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Logging;
-    using Microsoft.Extensions.Options;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Moq;
-    using System;
-    using System.Security.Principal;
-    using System.Threading.Tasks;
     using ThreeDPrinting.Models;
     using ThreeDPrinting.Tests.Mocks;
     using ThreeDPrinting.Web.Areas.Admin.Controllers;

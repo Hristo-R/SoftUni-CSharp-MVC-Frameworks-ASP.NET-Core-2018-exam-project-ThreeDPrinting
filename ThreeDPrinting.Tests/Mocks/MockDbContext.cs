@@ -1,7 +1,7 @@
 ﻿namespace ThreeDPrinting.Tests.Mocks
 {
-    using Microsoft.EntityFrameworkCore;
     using System;
+    using Microsoft.EntityFrameworkCore;
     using ThreeDPrinting.Web.Data;
 
     public static class MockDbContext

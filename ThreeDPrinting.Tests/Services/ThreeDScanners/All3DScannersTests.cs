@@ -1,8 +1,7 @@
 ﻿namespace ThreeDPrinting.Tests.Services.ThreeDScanners
 {
-
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ThreeDPrinting.Models;
     using ThreeDPrinting.Services.Implementations;
     using ThreeDPrinting.Tests.Mocks;
@@ -11,7 +10,6 @@
     [TestClass]
     public class All3DScannersTests
     {
-
         private ThreeDPrintingDbContext dbContext;
 
         [TestMethod]

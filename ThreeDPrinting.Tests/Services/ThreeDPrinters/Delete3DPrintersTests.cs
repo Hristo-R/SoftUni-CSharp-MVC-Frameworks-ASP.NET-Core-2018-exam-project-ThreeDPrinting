@@ -9,11 +9,9 @@
     [TestClass]
     public class Delete3DPrintersTests
     {
-
         private ThreeDPrintingDbContext dbContext;
 
         [TestMethod]
-
         public void Delete3DPrinter_ShouldReturnOK()
         {
             // Arrange
@@ -23,7 +21,7 @@
 
             // Act 
             service.Delete3DPrinters(1);
-            bool isDeleted = IsDeleted();
+            bool isDeleted = this.IsDeleted();
 
             // Assert
             Assert.AreEqual(true, isDeleted);

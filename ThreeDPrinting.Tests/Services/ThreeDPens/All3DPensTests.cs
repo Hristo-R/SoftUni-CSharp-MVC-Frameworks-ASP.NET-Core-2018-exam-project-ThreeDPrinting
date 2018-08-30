@@ -1,7 +1,7 @@
 ﻿namespace ThreeDPrinting.Tests.Services.ThreeDPens
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using ThreeDPrinting.Models;
     using ThreeDPrinting.Services.Implementations;
     using ThreeDPrinting.Tests.Mocks;

@@ -1,7 +1,7 @@
 ﻿namespace ThreeDPrinting.Tests.Mocks
 {
-    using AutoMapper;
     using System.Text;
+    using AutoMapper;
     using ThreeDPrinting.Web.Mapping;
 
     public static class MockAutoMapper

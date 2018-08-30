@@ -16,7 +16,7 @@
             // Act
             var result = controller.Index();
 
-            //Assert 
+            // Assert 
             Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
     }
