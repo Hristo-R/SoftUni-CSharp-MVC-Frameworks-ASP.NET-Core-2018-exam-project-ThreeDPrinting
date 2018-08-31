@@ -1,15 +1,15 @@
-﻿namespace ThreeDPrinting.Web.Models.ViewModels
+﻿namespace ThreeDPrinting.Web.Models.BindingModels
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class ThreeDScannerViewModel
+    public class ThreeDPrinterBindingModel
     {
         [Required]
-        [MaxLength(100)]
+        [StringLength(100)]
         public string Make { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [StringLength(100)]
         public string Model { get; set; }
 
         [Required]
@@ -18,14 +18,9 @@
         public decimal Price { get; set; }
 
         [Required]
-        [Display(Name = "Working Range")]
+        [Display(Name = "Build Volume")]
         [StringLength(50)]
-        public string WorkingRange { get; set; }
-
-        [Required]
-        [Display(Name = "Depth Image Size")]
-        [StringLength(50)]
-        public string DepthImageSize { get; set; }
+        public string BuildVolume { get; set; }
 
         [Required]
         [StringLength(6000)]

@@ -5,7 +5,7 @@
     using Microsoft.AspNetCore.Mvc;
     using ThreeDPrinting.Models;
     using ThreeDPrinting.Services;
-    using ThreeDPrinting.Web.Models.ViewModels;
+    using ThreeDPrinting.Web.Models.BindingModels;
 
     public class ThreeDPensController : Controller
     {
@@ -25,7 +25,7 @@
 
         [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
-        public IActionResult Add3DPen(ThreeDPenViewModel threeDPenModel)
+        public IActionResult Add3DPen(ThreeDPenBindingModel threeDPenModel)
         {
             if (!ModelState.IsValid)
             {
@@ -65,7 +65,7 @@
                 return NotFound();
             }
 
-            return View(new ThreeDPenViewModel
+            return View(new ThreeDPenBindingModel
             {
                 Make = threeDPen.Make,
                 Price = threeDPen.Price,
@@ -77,7 +77,7 @@
         [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         [Route("ThreeDPens/Edit3DPen/{id}")]
-        public IActionResult Edit3DPen(int id, ThreeDPenViewModel threeDPenModel)
+        public IActionResult Edit3DPen(int id, ThreeDPenBindingModel threeDPenModel)
         {
             if (!ModelState.IsValid)
             {

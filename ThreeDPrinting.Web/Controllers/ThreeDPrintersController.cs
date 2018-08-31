@@ -5,7 +5,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Services;
     using ThreeDPrinting.Models;
-    using ThreeDPrinting.Web.Models.ViewModels;
+    using ThreeDPrinting.Web.Models.BindingModels;
 
     public class ThreeDPrintersController : Controller
     {
@@ -25,7 +25,7 @@
 
         [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
-        public IActionResult Add3DPrinter(ThreeDPrinterViewModel threeDPrinterModel)
+        public IActionResult Add3DPrinter(ThreeDPrinterBindingModel threeDPrinterModel)
         {
             if (!ModelState.IsValid)
             {
@@ -60,7 +60,7 @@
                 return NotFound();
             }
 
-            return View(new ThreeDPrinterViewModel
+            return View(new ThreeDPrinterBindingModel
             {
                 Make = threeDPrinter.Make,
                 Model = threeDPrinter.Model,
@@ -74,7 +74,7 @@
         [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         [Route("ThreeDPrinters/Edit3DPrinters/{id}")]
-        public IActionResult Edit3DPrinters(int id, ThreeDPrinterViewModel threeDPrinterModel)
+        public IActionResult Edit3DPrinters(int id, ThreeDPrinterBindingModel threeDPrinterModel)
         {
             if (!ModelState.IsValid)
             {

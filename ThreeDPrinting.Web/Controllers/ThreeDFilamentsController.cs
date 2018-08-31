@@ -5,7 +5,7 @@
     using Microsoft.AspNetCore.Mvc;
     using ThreeDPrinting.Models;
     using ThreeDPrinting.Services;
-    using ThreeDPrinting.Web.Models.ViewModels;
+    using ThreeDPrinting.Web.Models.BindingModels;
 
     public class ThreeDFilamentsController : Controller
     {
@@ -25,7 +25,7 @@
 
         [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
-        public IActionResult Add3DFilament(ThreeDFilamentViewModel threeDFilamentModel)
+        public IActionResult Add3DFilament(ThreeDFilamentBindingModel threeDFilamentModel)
         {
             if (!ModelState.IsValid)
             {
@@ -58,7 +58,7 @@
                 return NotFound();
             }
 
-            return View(new ThreeDFilamentViewModel
+            return View(new ThreeDFilamentBindingModel
             {
                 Make = threeDFilament.Make,
                 Color = threeDFilament.Color,
@@ -70,7 +70,7 @@
         [Authorize(Roles = "Administrator, Dealer")]
         [HttpPost]
         [Route("ThreeDFilaments/Edit3DFilaments/{id}")]
-        public IActionResult Edit3DFilaments(int id, ThreeDFilamentViewModel threeDFilamentModel)
+        public IActionResult Edit3DFilaments(int id, ThreeDFilamentBindingModel threeDFilamentModel)
         {
             if (!ModelState.IsValid)
             {
