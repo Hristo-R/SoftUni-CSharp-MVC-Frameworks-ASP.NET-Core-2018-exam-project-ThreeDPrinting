@@ -17,7 +17,11 @@
             set;
         }
 
-        public DbSet<ThreeDScanner> ThreeDScanners { get; set; }
+        public DbSet<ThreeDScanner> ThreeDScanners 
+        { 
+            get; 
+            set; 
+        }
 
         public DbSet<ThreeDFilament> ThreeDFilaments { get; set; }
 
