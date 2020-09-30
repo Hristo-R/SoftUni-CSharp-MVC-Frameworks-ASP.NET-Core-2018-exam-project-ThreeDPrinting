@@ -11,7 +11,11 @@
         {
         }
 
-        public DbSet<ThreeDPrinter> ThreeDPrinters { get; set; }
+        public DbSet<ThreeDPrinter> ThreeDPrinters 
+        {
+            get; 
+            set;
+        }
 
         public DbSet<ThreeDScanner> ThreeDScanners { get; set; }
 
