@@ -23,7 +23,11 @@
             set; 
         }
 
-        public DbSet<ThreeDFilament> ThreeDFilaments { get; set; }
+        public DbSet<ThreeDFilament> ThreeDFilaments 
+        { 
+            get;
+            set; 
+        }
 
         public DbSet<ThreeDPen> ThreeDPens { get; set; }
 
