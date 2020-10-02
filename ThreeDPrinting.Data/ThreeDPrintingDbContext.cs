@@ -38,7 +38,7 @@
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder           
-.Entity<User>()
+                .Entity<User>()
                 .HasMany(u => u.ThreeDPrinters)
                 .WithOne(tdp => tdp.User)
                 .HasForeignKey(tdp => tdp.UserId);
