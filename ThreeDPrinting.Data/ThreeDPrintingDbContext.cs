@@ -11,7 +11,7 @@
         {
         }
 
-        public DbSet<ThreeDPrinter> ThreeDPrinters 
+        public DbSet<ThreeDPrinter>  ThreeDPrinters 
         {
             get; 
             set;
